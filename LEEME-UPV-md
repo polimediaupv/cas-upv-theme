@@ -1,0 +1,24 @@
+CAS UPV THEME
+=====================================
+
+Lecturas recomendadas:
+
+- https://github.com/apereo/cas-overlay-template
+- https://fawnoos.com/2021/02/16/cas63-ui-themes/
+
+# Resumen
+
+El tema parece utilizar [material-web-component](https://github.com/material-components/material-components-web).
+Hay que mirar los componentes y rehacer el tema de la UPV con ellos.
+
+
+Los ficheros de las plantillas se colocan en `src/resources/templates`
+
+Para que sea cómodo modificar las plantillas y ver el resultado hay que ejecutar el servidor con 
+```
+gradlew bootRun
+```
+
+y el resultado se puede ver en https://localhost:8443/cas/login
+
+**NOTA**: El fichero de la plantilla debe existir en `src/resources/templates` para que se pueda recargar, si se añade un fichero nuevo hay que recargar el servidor.
