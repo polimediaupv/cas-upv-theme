@@ -1,0 +1,60 @@
+name: Build & Deploy
+
+on: 
+  push:
+    branches: 
+      - casRadha
+
+# Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+permissions:
+    contents: read
+    pages: write
+    id-token: write
+
+concurrency:
+  group: build-and-deploy
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up JDK
+        uses: actions/setup-java@v4.0.0
+        with:
+          java-version: 11
+          distribution: 'corretto'
+
+      - name: Build
+        run: ./gradlew clean build
+
+      - name: Prepare artifact
+        run: |
+          mkdir -p mirror-root
+          sudo mkdir /etc/cas
+          sudo chown $USER:$USER /etc/cas
+          ./gradlew createKeystore
+          java -jar build/libs/cas.war &
+          PID=$!
+          sleep 60
+          wget --no-check-certificate --mirror --convert-links --adjust-extension --page-requisites --no-parent -P mirror-root https://localhost:8443/cas/login
+          kill $PID
+
+      - name: Upload as artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: mirror-root/localhost:8443/cas
+          
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
