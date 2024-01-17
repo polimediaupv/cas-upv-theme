@@ -760,7 +760,7 @@ hr {
 footer {
     --primary-dark: #D73333;
     --primary: #E5554F;
-    
+    display: block;
 }
 .footer-cols {
     padding: 64px 0;
@@ -781,6 +781,35 @@ footer .apps-links a,footer .apps-links svg {
 
 footer .apps-links a:hover {
     color: #D73333;
+}
+
+:is(.social-links) :is(a,button) {
+    font-size: 0.75rem;
+    color: #D73333;
+    text-decoration: none
+}
+
+:is(.social-links) :is(a,button):hover {
+    color: #A40E0E;
+}
+.social-links {
+    margin-top: 128px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    vertical-align: baseline;
+}
+
+.social-links a {
+    height: 23px;
+    display: flex;
+    align-items: center
+}
+
+.social-links svg {
+    max-height: 23px;
+    width: auto
 }
 
 @media(max-width: 1030px) {
@@ -836,5 +865,8 @@ footer .apps-links a:hover {
     
     footer .apps-links a:hover {
         color: #D73333;
+    }
+    .social-links {
+        margin: 65px 0 50px
     }
 }
