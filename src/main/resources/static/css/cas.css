@@ -585,6 +585,10 @@ button.close {
     .w-lg-66 {
         width: 66%;
     }
+    .col-md-12 {
+        width: 100%
+    }
+
 }
 
 @media all and (max-width: 767.99px) {
@@ -917,7 +921,6 @@ footer .apps-links a:hover {
         width:970px
     }
     .col-md-12 {
-        float:left;
         width: 100%
     }
 }
