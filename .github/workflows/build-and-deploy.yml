@@ -39,10 +39,11 @@ jobs:
           PID=$!
           sleep 60
           wget --no-check-certificate --mirror --convert-links --adjust-extension --page-requisites --no-parent -P mirror-root https://localhost:8443/cas/login || true
+          cp mirror-root/localhost:8443/cas/login.html mirror-root/localhost:8443/cas/index.html
           kill $PID
 
       - name: Upload as artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v3
         with:
           path: mirror-root/localhost:8443/cas
           
@@ -57,4 +58,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4
