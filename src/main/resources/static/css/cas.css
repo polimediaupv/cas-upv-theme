@@ -661,6 +661,8 @@ button.close {
 #main-content {
     margin-right: 10px;
     margin-left: 10px;
+    max-width: 500px;
+
 }
 
 /* oddly, the auto right and left margins caused the login form to not be centered in IE */
@@ -723,7 +725,7 @@ nav a {
 }
 
 .img_logo {
-    width: 18% !important;
+    width: 22% !important;
     padding-top: 10px !important;
     padding-bottom: 10px;
 }
@@ -1032,4 +1034,9 @@ footer .apps-links a:hover {
     .social-links {
         margin: 65px 0 50px
     }
+}
+/***************************************************************/
+/* LOGINFORM */
+select-style{
+    width: 400px;
 }

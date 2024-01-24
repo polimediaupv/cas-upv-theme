@@ -239,16 +239,16 @@
                 }
 
                 if (!supportsCookies()) {
-                    countMessages++;
+                    // countMessages++;
                     window.jQuery('#cookiesSupportedDiv').show();
                 }
 
-                if (countMessages === 0) {
-                    window.jQuery('#notifications-count').remove();
-                    window.jQuery('#cas-notifications-menu').remove();
-                } else {
-                    window.jQuery('#notifications-count').text(`(${countMessages})`)
-                }
+                // if (countMessages === 0) {
+                //     window.jQuery('#notifications-count').remove();
+                //     window.jQuery('#cas-notifications-menu').remove();
+                // } else {
+                //     window.jQuery('#notifications-count').text(`(${countMessages})`)
+                // }
             });
         })(typeof mdc !== 'undefined' && mdc);
     </script>

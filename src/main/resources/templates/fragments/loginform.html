@@ -59,6 +59,51 @@
                         <p th:each="err : ${#fields.errors('*')}" th:utext="${err + ' '}">Example error</p>
                         <!--<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>-->
                     </div>
+                    <!-- SELECTOR -->
+                    <section class="cas-field form-group my-3" id="loginSelectorSection">
+                        
+                        <div class="mdc-select mdc-select--outlined demo-enhanced-select ">
+                            <div class=" mdc-select__anchor  " style="width:400px">
+                                
+                                <div id="demo-selected-text" class="mdc-select__selected-text" tabindex="0" aria-disabled="false" aria-expanded="false"></div>
+                                <div class="mdc-notched-outline mdc-notched-outline--upgraded">
+                                    <div class="mdc-notched-outline__leading"></div>
+                                    <div class="mdc-notched-outline__notch" style="">
+                                        <label id="outlined-label" class="mdc-floating-label" style="">Tipo de autenticación</label>
+                                    </div>
+                                    <div class="mdc-notched-outline__trailing"></div>
+                                </div>
+                                <span class="mdc-select__dropdown-icon">
+                                    <svg
+                                        class="mdc-select__dropdown-icon-graphic"
+                                        viewBox="7 10 10 5" focusable="false">
+                                      <polygon
+                                          class="mdc-select__dropdown-icon-inactive"
+                                          stroke="none"
+                                          fill-rule="evenodd"
+                                          points="7 10 12 15 17 10">
+                                      </polygon>
+                                      <polygon
+                                          class="mdc-select__dropdown-icon-active"
+                                          stroke="none"
+                                          fill-rule="evenodd"
+                                          points="7 15 12 10 17 15">
+                                      </polygon>
+                                    </svg>
+                                  </span>
+                            </div>
+                            
+                            <div class="mdc-select__menu mdc-menu mdc-menu-surface  mdc-menu-surface--fullwidth" style="transform-origin: center top; left: 0px; top: 56px; max-height: 336.219px;">
+                                <ul class="mdc-list">
+                                    <li data-value="" disabled="" aria-selected="false" role="option" class="mdc-list-item" tabindex="0"></li>
+                                    <li data-value="student" aria-selected="false" role="option" class="mdc-list-item" tabindex="-1">Estudiante</li>
+                                    <li data-value="personal" aria-selected="false" role="option" class="mdc-list-item" tabindex="-1">Personal</li>
+                                    <li data-value="external" aria-selected="false" role="option" class="mdc-list-item" tabindex="-1">Externo</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- USERNAME -->
                     <section class="cas-field form-group my-3" id="usernameSection">
                         <label for="username"
                                class="mdc-text-field mdc-text-field--outlined control-label w-100">
@@ -101,6 +146,7 @@
                             /*]]>*/
                         </script>
                     </section>
+                    <!-- PASSWORD -->
                     <section class="cas-field form-group my-3 mdc-input-group form-group" id="passwordSection">
                         <div class="mdc-input-group-field mdc-input-group-field-append">
                             <div class="caps-check">
