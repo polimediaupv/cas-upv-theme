@@ -63,13 +63,13 @@
                     <section class="cas-field form-group my-3" id="loginSelectorSection">
                         
                         <div class="mdc-select mdc-select--outlined demo-enhanced-select ">
-                            <div class=" mdc-select__anchor  " style="width:400px">
+                            <div class=" mdc-select__anchor  " style= "width: 450px">
                                 
                                 <div id="demo-selected-text" class="mdc-select__selected-text" tabindex="0" aria-disabled="false" aria-expanded="false"></div>
                                 <div class="mdc-notched-outline mdc-notched-outline--upgraded">
                                     <div class="mdc-notched-outline__leading"></div>
                                     <div class="mdc-notched-outline__notch" style="">
-                                        <label id="outlined-label" class="mdc-floating-label" style="">Tipo de autenticación</label>
+                                        <label id="outlined-label" class="mdc-floating-label" style="" th:utext="#{screen.login.select.autentication}">Tipo de autenticación</label>
                                     </div>
                                     <div class="mdc-notched-outline__trailing"></div>
                                 </div>
@@ -93,12 +93,12 @@
                                   </span>
                             </div>
                             
-                            <div class="mdc-select__menu mdc-menu mdc-menu-surface  mdc-menu-surface--fullwidth" style="transform-origin: center top; left: 0px; top: 56px; max-height: 336.219px;">
+                            <div class="mdc-select__menu mdc-menu mdc-menu-surface  mdc-menu-surface--fullwidth " style="transform-origin: center top; left: 0px; top: 56px; max-height: 336.219px;">
                                 <ul class="mdc-list">
                                     <li data-value="" disabled="" aria-selected="false" role="option" class="mdc-list-item" tabindex="0"></li>
-                                    <li data-value="student" aria-selected="false" role="option" class="mdc-list-item" tabindex="-1">Estudiante</li>
-                                    <li data-value="personal" aria-selected="false" role="option" class="mdc-list-item" tabindex="-1">Personal</li>
-                                    <li data-value="external" aria-selected="false" role="option" class="mdc-list-item" tabindex="-1">Externo</li>
+                                    <li data-value="student" aria-selected="false" role="option" class="mdc-list-item" tabindex="-1" th:utext="#{screen.login.select.estudiante}">Estudiante</li>
+                                    <li data-value="personal" aria-selected="false" role="option" class="mdc-list-item" tabindex="-1" th:utext="#{screen.login.select.personal}">Personal</li>
+                                    <li data-value="external" aria-selected="false" role="option" class="mdc-list-item" tabindex="-1" th:utext="#{screen.login.select.externo}">Externo</li>
                                 </ul>
                             </div>
                         </div>
