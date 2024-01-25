@@ -64,7 +64,7 @@
                     <section class="cas-field form-group my-3" id="loginSelectorSection">
                         
                         <div class="mdc-select mdc-select--outlined demo-enhanced-select ">
-                            <div class=" mdc-select__anchor  " style= "width: 450px"  
+                            <div class=" mdc-select__anchor" style= "width: 450px"  
                                 role="button"
                                 aria-haspopup="listbox"
                                 aria-expanded="false"
@@ -201,9 +201,11 @@
                                            th:accesskey="#{screen.welcome.label.password.accesskey}"
                                            th:field="*{password}"
                                            autocomplete="off"/>
+                                    <!-- EYE ICON IN PASSWORD  -->
                                     <button
-                                            class="reveal-password align-self-end mdc-button mdc-button--unelevated mdc-input-group-append mdc-icon-button btn btn-primary"
+                                            class="reveal-password align-self-end mdc-button  mdc-input-group-append mdc-icon-button btn btn-primary eye-style"
                                             tabindex="-1" type="button">
+                                            <!-- mdc-button--unelevated -->
                                         <i class="mdi mdi-eye reveal-password-icon fas fa-eye"></i>
                                         <span class="visually-hidden">Toggle Password</span>
                                     </button>
@@ -353,8 +355,14 @@
                             </span>
                         </p>
                     </section>
-
-                    <div th:replace="fragments/submitbutton :: submitButton (messageKey='screen.welcome.button.login')"/>
+                    <!-- LOGIN BUTTON -->
+                    <div class="">
+                        <button class="mdc-button mdc-button--outlined btn btn-primary btn-primary button-style" name="submitBtn" accesskey="l" type="submit" value="INICIAR SESIÓN">
+                            <!-- mdc-button--raised -->
+                            <span class="mdc-button__label" th:text="#{screen.welcome.button.login}">INICIAR SESIÓN</span>
+                        </button>
+                        <!-- <div th:replace="fragments/submitbutton :: submitButton (messageKey='screen.welcome.button.login')"/> -->
+                    </div>
                 </div>
             </form>
 

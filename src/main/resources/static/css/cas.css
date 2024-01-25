@@ -1037,6 +1037,26 @@ footer .apps-links a:hover {
 }
 /***************************************************************/
 /* LOGINFORM */
-select-style{
-    width: 420px;
+.select-style{
+    width: 450px;
+}
+.eye-style{
+    color: #fff;
+    background-color: #D73333
+}
+.eye-style:hover{
+    color: #fff;
+    background-color: #A40E0E
+}
+
+.button-style{
+    background-color: #fff;
+    color: #D73333 !important;
+    border-color: #D73333 !important;
+}
+
+.button-style:hover{
+    background-color: #A40E0E;
+    color: #fff !important;
+    border-color: #A40E0E
 }
