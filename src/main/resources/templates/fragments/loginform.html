@@ -60,12 +60,19 @@
                         <!--<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>-->
                     </div>
                     <!-- SELECTOR -->
+                    
                     <section class="cas-field form-group my-3" id="loginSelectorSection">
                         
                         <div class="mdc-select mdc-select--outlined demo-enhanced-select ">
-                            <div class=" mdc-select__anchor  " style= "width: 450px">
-                                
-                                <div id="demo-selected-text" class="mdc-select__selected-text" tabindex="0" aria-disabled="false" aria-expanded="false"></div>
+                            <div class=" mdc-select__anchor  " style= "width: 450px"  
+                                role="button"
+                                aria-haspopup="listbox"
+                                aria-expanded="false"
+                                aria-labelledby="outlined-label demo-selected-text">                                
+                                <span class="mdc-select__selected-text-container">
+                                    <span class="mdc-select__selected-text"></span>
+                                  </span>
+                                <!-- <div id="demo-selected-text" class="mdc-select__selected-text" tabindex="0" aria-disabled="false" aria-expanded="false"></div> -->
                                 <div class="mdc-notched-outline mdc-notched-outline--upgraded">
                                     <div class="mdc-notched-outline__leading"></div>
                                     <div class="mdc-notched-outline__notch" style="">
@@ -93,14 +100,41 @@
                                   </span>
                             </div>
                             
-                            <div class="mdc-select__menu mdc-menu mdc-menu-surface  mdc-menu-surface--fullwidth " style="transform-origin: center top; left: 0px; top: 56px; max-height: 336.219px;">
-                                <ul class="mdc-list">
-                                    <li data-value="" disabled="" aria-selected="false" role="option" class="mdc-list-item" tabindex="0"></li>
+                            <!-- <div class="mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth " style="transform-origin: center top; left: 0px; top: 56px; max-height: 336.219px;">
+                                <ul class="mdc-list" role="listbox">
+                                    <li  data-value="" disabled="" aria-selected="false" role="option" class="mdc-list-item" tabindex="0">
+                                       
+                                    </li>
                                     <li data-value="student" aria-selected="false" role="option" class="mdc-list-item" tabindex="-1" th:utext="#{screen.login.select.estudiante}">Estudiante</li>
                                     <li data-value="personal" aria-selected="false" role="option" class="mdc-list-item" tabindex="-1" th:utext="#{screen.login.select.personal}">Personal</li>
                                     <li data-value="external" aria-selected="false" role="option" class="mdc-list-item" tabindex="-1" th:utext="#{screen.login.select.externo}">Externo</li>
                                 </ul>
-                            </div>
+                            </div> -->
+                            <div class="mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth">
+                                <ul class="mdc-list" role="listbox" aria-label="Autentication listbox">
+                                  <li class="mdc-list-item mdc-list-item--selected" aria-selected="true" data-value="" role="option">
+                                    <span class="mdc-list-item__ripple"></span>
+                                  </li>
+                                  <li class="mdc-list-item" aria-selected="false" data-value="student" role="option">
+                                    <span class="mdc-list-item__ripple"></span>
+                                    <span class="mdc-list-item__text" th:utext="#{screen.login.select.estudiante}">
+                                      Student
+                                    </span>
+                                  </li>
+                                  <li class="mdc-list-item" aria-selected="false" data-value="personal" role="option">
+                                    <span class="mdc-list-item__ripple"></span>
+                                    <span class="mdc-list-item__text" th:utext="#{screen.login.select.personal}">
+                                      Personal
+                                    </span>
+                                  </li>
+                                  <li class="mdc-list-item" aria-selected="false" data-value="externo" role="option">
+                                    <span class="mdc-list-item__ripple"></span>
+                                    <span class="mdc-list-item__text" th:utext="#{screen.login.select.externo}">
+                                      External
+                                    </span>
+                                  </li>
+                                </ul>
+                              </div>
                         </div>
                     </section>
                     <!-- USERNAME -->
