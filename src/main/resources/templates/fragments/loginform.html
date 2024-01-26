@@ -64,6 +64,7 @@
                     <section class="cas-field form-group my-3" id="loginSelectorSection">
                         
                         <div class="mdc-select mdc-select--outlined demo-enhanced-select ">
+                            <input type="hidden" name="tipo">
                             <div class=" mdc-select__anchor" style= "width: 450px"  
                                 role="button"
                                 aria-haspopup="listbox"
@@ -232,7 +233,7 @@
                         <div class="d-flex">
                             <div th:if="${availableAuthenticationHandlerNames.size() > 1}"
                                  class="mdc-select mdc-select--outlined mdc-select--required mdc-menu-surface--fullwidth authn-source">
-                                <div class="mdc-select__anchor"
+                                 <div class="mdc-select__anchor"
                                      role="button"
                                      aria-required="true"
                                      aria-haspopup="listbox"
