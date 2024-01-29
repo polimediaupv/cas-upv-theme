@@ -1055,6 +1055,11 @@ footer .apps-links a:hover {
 .select-style{
     width: 450px;
 }
+
+.mdc-select:not(.mdc-select--disabled).mdc-select--focused .mdc-floating-label{
+    color: var(--cas-theme-primary, #153e50);
+}
+
 .eye-style{
     color: #fff;
     background-color: #D73333
@@ -1064,14 +1069,23 @@ footer .apps-links a:hover {
     background-color: #A40E0E
 }
 
-.button-style{
+.mdc-button--outlined.button-style{
     background-color: #fff;
-    color: #D73333 !important;
-    border-color: #D73333 !important;
+    color: #D73333 ;
+    border-color: #D73333;
 }
 
-.button-style:hover{
+.mdc-button--outlined.button-style:hover{
     background-color: #A40E0E;
-    color: #fff !important;
+    color: #fff;
     border-color: #A40E0E
+}
+
+.two-column{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.element{
+    flex:1;
 }

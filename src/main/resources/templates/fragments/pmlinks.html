@@ -36,13 +36,13 @@
                 onclick="document.getElementById('passwordManagementUserForm').submit();" />
             <br><br>
         </form>
-        <div th:unless="${passwordManagementEnabled}">
+        <!-- <div th:unless="${passwordManagementEnabled}">
             <br />
             <span class="mdi mdi-account-question"></span>
             <span th:utext="#{screen.pm.button.forgotpwd('https://intranet.upv.es/pls/soalu/sic_auteutil.FrmIniciaClave?P_IDIOMA=c')}" >
                 <div th:utext="#{screen.login.forgotpassword}">Forgot your password?</div>
             </span>
-        </div>
+        </div> -->
     </div>
 </body>
 

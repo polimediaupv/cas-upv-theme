@@ -63,13 +63,17 @@
                     
                     <section class="cas-field form-group my-3" id="loginSelectorSection">
                         
-                        <div class="mdc-select mdc-select--outlined demo-enhanced-select ">
+                        <div class="mdc-select mdc-select--outlined mdc-select--required">
                             <input type="hidden" name="auth_type">
                             <div class=" mdc-select__anchor" style= "width: 450px"  
                                 role="button"
                                 aria-haspopup="listbox"
                                 aria-expanded="false"
-                                aria-labelledby="outlined-label demo-selected-text">                                
+                                aria-labelledby="outlined-label demo-selected-text"       
+                                aria-required="true"                         
+                                aria-controls="helper-text-select"
+                                aria-describedby="helper-text-select" >
+                                <!-- .mdc-select:not(.mdc-select--disabled).mdc-select--focused .mdc-floating-label { -->
                                 <span class="mdc-select__selected-text-container">
                                     <span class="mdc-select__selected-text"></span>
                                   </span>
@@ -101,16 +105,7 @@
                                   </span>
                             </div>
                             
-                            <!-- <div class="mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth " style="transform-origin: center top; left: 0px; top: 56px; max-height: 336.219px;">
-                                <ul class="mdc-list" role="listbox">
-                                    <li  data-value="" disabled="" aria-selected="false" role="option" class="mdc-list-item" tabindex="0">
-                                       
-                                    </li>
-                                    <li data-value="student" aria-selected="false" role="option" class="mdc-list-item" tabindex="-1" th:utext="#{screen.login.select.estudiante}">Estudiante</li>
-                                    <li data-value="personal" aria-selected="false" role="option" class="mdc-list-item" tabindex="-1" th:utext="#{screen.login.select.personal}">Personal</li>
-                                    <li data-value="external" aria-selected="false" role="option" class="mdc-list-item" tabindex="-1" th:utext="#{screen.login.select.externo}">Externo</li>
-                                </ul>
-                            </div> -->
+                            
                             <div class="mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth">
                                 <ul class="mdc-list" role="listbox" aria-label="Autentication listbox">
                                   <li class="mdc-list-item mdc-list-item--selected" aria-selected="true" data-value="" role="option">
@@ -137,6 +132,11 @@
                                 </ul>
                               </div>
                         </div>
+                       
+                        <div id="helper-text-select" class="mdc-select-helper-text mdc-select-helper-text--validation-msg" aria-hidden="false">
+                            <span id="authenticationValidationMessage" th:utext="#{authentication.required}"></span>
+                        </div>
+                        
                     </section>
                     <!-- USERNAME -->
                     <section class="cas-field form-group my-3" id="usernameSection">
@@ -357,12 +357,21 @@
                         </p>
                     </section>
                     <!-- LOGIN BUTTON -->
-                    <div class="">
-                        <button class="mdc-button mdc-button--outlined btn btn-primary btn-primary button-style" name="submitBtn" accesskey="l" type="submit" value="INICIAR SESIÓN">
-                            <!-- mdc-button--raised -->
-                            <span class="mdc-button__label" th:text="#{screen.welcome.button.login}">INICIAR SESIÓN</span>
-                        </button>
-                        <!-- <div th:replace="fragments/submitbutton :: submitButton (messageKey='screen.welcome.button.login')"/> -->
+                    <div class="two-column">
+                        <div class="element">
+                            <button class="mdc-button mdc-button--outlined btn btn-primary btn-primary button-style" name="submitBtn" accesskey="l" type="submit" value="INICIAR SESIÓN">
+                                <!-- mdc-button--raised -->
+                                <span class="mdc-button__label" th:text="#{screen.welcome.button.login}">INICIAR SESIÓN</span>
+                            </button>
+                            <!-- <div th:replace="fragments/submitbutton :: submitButton (messageKey='screen.welcome.button.login')"/> -->
+                        </div>
+                        <div class="element" th:unless="${passwordManagementEnabled}">
+                            <!-- <br /> -->
+                            <span class="mdi mdi-account-question"></span>
+                            <span th:utext="#{screen.pm.button.forgotpwd('https://intranet.upv.es/pls/soalu/sic_auteutil.FrmIniciaClave?P_IDIOMA=c')}" >
+                                <div th:utext="#{screen.login.forgotpassword}">Forgot your password?</div>
+                            </span>
+                        </div>
                     </div>
                 </div>
             </form>
