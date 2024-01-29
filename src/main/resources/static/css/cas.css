@@ -733,6 +733,21 @@ nav a {
 @media (max-width: 450px) {
     .img_logo {width: 37%;padding-bottom: 0px;}
 }
+
+.lang-link {
+    background-color: #343434;
+    font-size: 0.8rem;
+    color: white;
+    text-align: right;
+    padding-top: 5px;
+    padding-right: 11px;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    font-weight: bold;
+}
+.lang-link-current {
+    color: lightgray
+}
 /***************************************************************/
 /* FOOTER */
 
