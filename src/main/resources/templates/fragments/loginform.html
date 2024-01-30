@@ -368,9 +368,11 @@
                         <div class="last-element-column forgot-your-password-text" th:unless="${passwordManagementEnabled}">
                             <!-- <br /> -->
                             <span class="mdi mdi-account-question"></span>
-                            <span class= th:utext="#{screen.pm.button.forgotpwd('https://intranet.upv.es/pls/soalu/sic_auteutil.FrmIniciaClave?P_IDIOMA=c')}" >
+                            <span th:utext="#{screen.login.upvurl}"> </span>
+                            <!-- <span th:utext="#{screen.pm.button.forgotpwd('https://intranet.upv.es/pls/soalu/sic_auteutil.FrmIniciaClave?P_IDIOMA=c')}" >
                                 <div th:utext="#{screen.login.forgotpassword}">Forgot your password?</div>
-                            </span>
+                            </span> -->
+                           
                         </div>
                     </div>
                 </div>
