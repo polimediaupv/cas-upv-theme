@@ -146,7 +146,7 @@
                                 <span class="mdc-notched-outline__leading"></span>
                                 <span class="mdc-notched-outline__notch">
                                     <span class="mdc-floating-label"
-                                          th:utext="#{screen.welcome.label.netid}">Username</span>
+                                          th:utext="#{screen.welcome.label.dniid}">DNI/ID</span>
                                 </span>
                                 <span class="mdc-notched-outline__trailing"></span>
                             </span>
@@ -163,7 +163,7 @@
 
                         <div class="mdc-text-field-helper-line">
                             <div class="mdc-text-field-helper-text mdc-text-field-helper-text--validation-msg" aria-hidden="true">
-                                <span id="usernameValidationMessage" th:utext="#{username.required}"></span>
+                                <span id="usernameValidationMessage" th:utext="#{dniid.required}"></span>
                             </div>
                         </div>
 
@@ -190,7 +190,7 @@
                                     <span class="mdc-notched-outline">
                                         <span class="mdc-notched-outline__leading"></span>
                                         <span class="mdc-notched-outline__notch">
-                                            <span class="mdc-floating-label" th:utext="#{screen.welcome.label.password}">Password</span>
+                                            <span class="mdc-floating-label" th:utext="#{screen.welcome.label.pinkey}">PIN/Clave</span>
                                         </span>
                                         <span class="mdc-notched-outline__trailing"></span>
                                     </span>
@@ -215,7 +215,7 @@
                                     <div
                                             class="mdc-text-field-helper-text mdc-text-field-helper-text--validation-msg"
                                             aria-hidden="true">
-                                        <span id="passwordValidationMessage" th:utext="#{password.required}"></span>
+                                        <span id="passwordValidationMessage" th:utext="#{pinkey.required}"></span>
                                     </div>
                                 </div>
                                 <div class="mdc-text-field-helper-line caps-warn">
@@ -357,18 +357,18 @@
                         </p>
                     </section>
                     <!-- LOGIN BUTTON -->
-                    <div class="two-column">
-                        <div class="element">
-                            <button class="mdc-button mdc-button--outlined btn btn-primary btn-primary button-style" name="submitBtn" accesskey="l" type="submit" value="INICIAR SESIÓN">
+                    <div class="columns">
+                        <div class="element-column">
+                            <button class="mdc-button mdc-button--outlined btn btn-primary btn-primary button-style wide-button" name="submitBtn" accesskey="l" type="submit" value="INICIAR SESIÓN">
                                 <!-- mdc-button--raised -->
                                 <span class="mdc-button__label" th:text="#{screen.welcome.button.login}">INICIAR SESIÓN</span>
                             </button>
                             <!-- <div th:replace="fragments/submitbutton :: submitButton (messageKey='screen.welcome.button.login')"/> -->
                         </div>
-                        <div class="element" th:unless="${passwordManagementEnabled}">
+                        <div class="last-element-column forgot-your-password-text" th:unless="${passwordManagementEnabled}">
                             <!-- <br /> -->
                             <span class="mdi mdi-account-question"></span>
-                            <span th:utext="#{screen.pm.button.forgotpwd('https://intranet.upv.es/pls/soalu/sic_auteutil.FrmIniciaClave?P_IDIOMA=c')}" >
+                            <span class= th:utext="#{screen.pm.button.forgotpwd('https://intranet.upv.es/pls/soalu/sic_auteutil.FrmIniciaClave?P_IDIOMA=c')}" >
                                 <div th:utext="#{screen.login.forgotpassword}">Forgot your password?</div>
                             </span>
                         </div>
@@ -411,7 +411,20 @@
                 </span>
             </div>
 
-            <hr th:if="${loginFormViewable and loginFormEnabled}" class="my-4"/>
+            <!-- SEPARATION LINE -->
+            <div class="separator-line columns">
+                <hr th:if="${loginFormViewable and loginFormEnabled}" class="my-4, element-column"/>
+                <span th:utext="#{screen.welcome.separator.otherlogin}">OR</span>  
+                <hr th:if="${loginFormViewable and loginFormEnabled}" class="my-4, element-column"/>
+            </div>
+
+            <!-- LOGIN WITH CERTIFICATE BUTTON -->
+            <div class="login-certificate-button">
+                <button class="mdc-button mdc-button--outlined btn btn-primary btn-primary button-style wide-button" name="btnWithCert" accesskey="l" type="" value="INICIAR SESIÓN">
+                    <!-- mdc-button--raised -->
+                    <span class="mdc-button__label" th:text="#{screen.welcome.button.loginwithcertificate}">CERTIFICADO DIGITAL</span>
+                </button>
+            </div>
 
             <span id="webauthnLoginPanel" th:if="${webAuthnPrimaryAuthenticationEnabled}">
                 <script type="text/javascript">

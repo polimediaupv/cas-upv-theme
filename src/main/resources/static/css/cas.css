@@ -728,6 +728,7 @@ nav a {
     width: 22% !important;
     padding-top: 10px !important;
     padding-bottom: 10px;
+ 
 }
 
 @media (max-width: 450px) {
@@ -1081,11 +1082,41 @@ footer .apps-links a:hover {
     border-color: #A40E0E
 }
 
-.two-column{
+.columns{
+    margin-top:20px;
     display:flex;
     justify-content: center;
     align-items: center;
+    gap: 10px;
 }
-.element{
+.element-column{
     flex:1;
+}
+
+.last-element-column{
+    flex:1;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.forgot-your-password-text:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.wide-button{
+    width: 100%;    
+}
+
+.separator-line {
+    margin-top:30px;
+}
+
+.login-certificate-button{
+    margin-top: 30px;
+    width: 100%;    
+    display:flex;
+    justify-content:center
+    
 }
