@@ -752,9 +752,6 @@ nav a {
 /***************************************************************/
 /* FOOTER */
 
-div {
-    /* display: block; */
-}
 b {
     font-weight: 700
 }
@@ -795,10 +792,10 @@ b {
     flex:1;
 }
 
-.row {
+/* .row {
     margin-right: -15px;
     margin-left: -15px
-}
+} */
 
 .col-md-12 .col-sm-12{
     position: relative;
@@ -807,28 +804,28 @@ b {
     padding-left: 15px
 
 }
-.grid {
+/* .grid {
     display: grid;
     gap: 1rem
-}
+} */
 
-.grid-4 {
+/* .grid-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr))
-}
+} */
 
-.flex {
+/* .flex {
     display: flex;
     align-items: baseline
-}
+} */
 
-.btn-group-vertical>.btn-group:after,.btn-group-vertical>.btn-group:before,.btn-toolbar:after,.btn-toolbar:before,.clearfix:after,.clearfix:before,.container-fluid:after,.container-fluid:before,.container:after,.container:before,.dl-horizontal dd:after,.dl-horizontal dd:before,.form-horizontal .form-group:after,.form-horizontal .form-group:before,.modal-footer:after,.modal-footer:before,.modal-header:after,.modal-header:before,.nav:after,.nav:before,.navbar-collapse:after,.navbar-collapse:before,.navbar-header:after,.navbar-header:before,.navbar:after,.navbar:before,.pager:after,.pager:before,.panel-body:after,.panel-body:before,.row:after,.row:before {
+/* .btn-group-vertical>.btn-group:after,.btn-group-vertical>.btn-group:before,.btn-toolbar:after,.btn-toolbar:before,.clearfix:after,.clearfix:before,.container-fluid:after,.container-fluid:before,.container:after,.container:before,.dl-horizontal dd:after,.dl-horizontal dd:before,.form-horizontal .form-group:after,.form-horizontal .form-group:before,.modal-footer:after,.modal-footer:before,.modal-header:after,.modal-header:before,.nav:after,.nav:before,.navbar-collapse:after,.navbar-collapse:before,.navbar-header:after,.navbar-header:before,.navbar:after,.navbar:before,.pager:after,.pager:before,.panel-body:after,.panel-body:before,.row:after,.row:before {
     display: table;
     content: " "
 }
 
 .btn-group-vertical>.btn-group:after,.btn-toolbar:after,.clearfix:after,.container-fluid:after,.container:after,.dl-horizontal dd:after,.form-horizontal .form-group:after,.modal-footer:after,.modal-header:after,.nav:after,.navbar-collapse:after,.navbar-header:after,.navbar:after,.pager:after,.panel-body:after,.row:after {
     clear: both
-}
+} */
 
 
 a:-webkit-any-link {
@@ -856,9 +853,9 @@ a:focus {
   -o-transition: all 0.25s ease-out;
   transition: all 0.25s ease-out;
 }
-.mt-2 {
+/* .mt-2 {
     margin-top: 1rem
-}
+} */
 
 
 
@@ -885,7 +882,7 @@ footer {
 :is(.social-links) :is(a,button):hover {
     color: #A40E0E;
 }
-.social-links {
+/* .social-links {
     margin-top: 128px;
     display: flex;
     align-items: center;
@@ -903,7 +900,7 @@ footer {
 .social-links svg {
     max-height: 23px;
     width: auto
-}
+} */
 
 @media (min-width: 768px) {
     .container {
@@ -987,9 +984,9 @@ footer {
     footer .apps-links a:hover {
         color: #D73333;
     }
-    .social-links {
+    /* .social-links {
         margin: 65px 0 50px
-    }
+    } */
 }
 @media(max-width: 700px){
     .contact-info-footer{
