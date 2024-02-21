@@ -11,34 +11,30 @@
 </head>
 
 <body>
-<div th:fragment="header">
+<header th:fragment="header">
     <div class="m1">
         <a th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}"
-            th:href="${urlBuilder.replaceQueryParam('locale', 'ca').toUriString()}"
+            th:href="${urlBuilder.replaceQueryParam('locale', 'ca').build().toUriString()}"
             th:class="${#locale.toString()}=='ca' ? 'lang-link lang-link-current' : 'lang-link'"
             href="#"> VA </a>        
         |
         <a th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}"
-            th:href="${urlBuilder.replaceQueryParam('locale', 'es').toUriString()}"
+            th:href="${urlBuilder.replaceQueryParam('locale', 'es').build().toUriString()}"
             th:class="${#locale.toString()}=='es' ? 'lang-link lang-link-current' : 'lang-link'"
             href="#"> ES </a>        
         |
         <a th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}"
-            th:href="${urlBuilder.replaceQueryParam('locale', 'en').toUriString()}"
+            th:href="${urlBuilder.replaceQueryParam('locale', 'en').build().toUriString()}"
             th:class="${#locale.toString()}=='en' ? 'lang-link lang-link-current' : 'lang-link'"
             href="#"> EN </a>
     </div>
-    <div class="nav-container">  
+    <div class="nav-container" style="background-color: white;">  
 
         <!--  <nav class="nav-inner transparent"> -->
       
                <div class="container">
-                  <div class="row">
-                    <div style="">     
-                        <a href="http://www.upv.es" target="_blank"><img src="images/UPV_logo.svg" alt="UPV" class="img_logo" style="width: 18%;"></a></div> 
-                    
-                      
-      
+                  <div class="row">    
+					<a href="http://www.upv.es" target="_blank"><img th:src="@{/themes/radha/images/UPV_logo.svg}" alt="UPV" class="img_logo" style="width: 18%;"></a> 
                  </div> 
                </div>
           
@@ -261,7 +257,7 @@
             });
         })(typeof mdc !== 'undefined' && mdc);
     </script>
-</div>
+</header>
 
 
 </body>

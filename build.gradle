@@ -278,5 +278,7 @@ dependencies {
 
     
     testImplementation "org.springframework.boot:spring-boot-starter-test"
+
+    implementation "org.apereo.cas:cas-server-support-ldap"
 }
 
