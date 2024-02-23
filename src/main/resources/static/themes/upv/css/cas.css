@@ -1,0 +1,480 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:wght@500&display=swap');
+
+:root {
+    --grey-UPV-light: #5C6368;
+    --grey-UPV: #424A50;
+    --grey-UPV-dark: #3F4444;
+    --grey-dark: #5B5B5B;
+    --grey-medium: #CFCFCF;
+    --grey-light: #F1F1F1;
+    --black: #111111;
+    --white: #FFFFFF;
+    --red: #E5554F;
+    --red-dark: #D73333;
+    --red-darkest: #A40E0E;
+    --yellow: #FFD100;
+    --yellow-dark: #FAA500;
+    --yellow-darkest: #92540C;
+
+    --color-light: var(--grey-light);
+    --color-dark: var(--red-darkest);
+    --color-shadow: var(--grey-UPV-dark);
+    --color-highlight: var(--red);
+    --focus-outline: 5px solid var(--color-highlight);
+}
+
+html {
+    margin: 0px 0px 0px 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    margin: 0px 0px 0px 0px;
+    padding: 0px;
+    min-height: 100dvh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: "header" "main" "footer";
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+    font-size: 70px;
+}
+
+h2 {
+    font-size: 50px;
+}
+
+h3 {
+    font-size: 34px;
+}
+
+p,input,select,button,a {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+}
+
+main {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main:has(form.login-form) {
+    display: grid;
+    place-items: center;
+}
+
+/* Cabecera */
+header {
+    display: flex;
+    flex-direction: column;
+}
+
+header > .header-title {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 20px;
+}
+
+header > .header-title i.logo {
+    display: block;
+    width: 170px;
+    height: 52px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-image: url(https://www.upv.es/imagenes/svg/logo-upv.svg);
+}
+
+header > .header-title i.logo-mobile {
+    display: none;
+}
+
+header > .header-title > h1 {
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--black);
+}
+
+header > .header-title > div.slash {
+    display: block;
+    width: 2px;
+    height: 60px;
+    background-color: var(--grey-medium);
+    transform: rotate(30deg);
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+nav.lang-selector {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    background-color: var(--grey-UPV-dark);
+    padding: 4px;
+}
+
+nav.lang-selector > a {
+    font-size: 1.2em;
+    text-decoration: none;
+    color: var(--grey-medium);
+    transition: all 200ms ease-in-out;
+    text-transform: uppercase;
+    font-size: 0.7em;
+}
+
+header > a {
+    margin: 20px;
+}
+
+header > nav.breadcrumbs {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 4px;
+    background-color: var(--grey-medium);
+}
+
+/* Formulario */
+.login-form {
+    display: grid;
+    place-items: center;
+    width: 500px;
+    padding: 40px;
+    background-color: var(--color-light);
+    border-radius: 10px;
+    margin-bottom: 50px;
+}
+
+.login-form h2 {
+    color: var(--black);
+    font-size: 17px;
+    text-align: center;
+}
+
+.login-form h3 {
+    color: var(--black);
+    font-size: 14px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+}
+
+.login-form h3 hr {
+    flex-grow: 1;
+    height: 1px;
+    border: 0px;
+    background-color: var(--grey-medium);
+}
+
+.login-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    width: 100%
+}
+
+#login-form-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    width: 100%;
+}
+
+#heroimg {
+    width: 100%;
+}
+
+.login-form label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    background-color: white;
+    width: 100%;
+    border-radius: 6px;
+    padding: 0px 0px 0px 10px;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 3px 0px var(--color-shadow);
+    transition: all 200ms ease-in-out;
+}
+
+.login-form fieldset {
+    display: flex;
+    align-items: center;
+    border: 0px;
+    width: 100%;
+    gap: 10px;
+}
+
+a {
+    font-size: 14px;
+    color: var(--red-darkest);
+    transition: all 50ms ease-in-out;
+}
+
+a:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+}
+
+.login-form fieldset a {
+    text-decoration: none;
+    transition: all 200ms ease-in-out;
+    text-wrap: nowrap;
+    text-decoration: underline;
+}
+
+.login-form form button {
+    width: 100%;
+    padding: 5px 10px 5px 10px;
+    margin-top: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 1.2em;
+    border-radius: 10px;
+    border: 0;
+    background-color: var(--color-dark);
+    color: white;
+    box-shadow: 0px 0px 3px 0px var(--color-shadow);
+    transition: all 100ms ease-in-out;
+}
+
+.login-form form button:hover {
+    transform: scale(1.01);
+}
+
+.login-form form button:active {
+    transform: scale(0.99);
+}
+
+.login-form form button:focus {
+    outline: var(--focus-outline);
+}
+
+.login-form form button > svg {
+    width: 30px;
+    box-sizing: border-box;
+    stroke: white;
+}
+
+.login-form label > button {
+    background: var(--red-darkest);
+    border-radius: 0px 6px 6px 0px;
+    border: 0;
+    transition: all 150ms linear;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    margin: 0px;
+    padding: 0;
+}
+
+.login-form label > button:hover {
+    background: var(--red-dark);
+}
+
+.login-form label > button:active {
+    background: var(--red);
+}
+
+.login-form label > button:focus {
+    outline: 5px solid var(--color-highlight);
+    outline-offset: 2px;
+}
+
+.login-form label > button svg {
+    stroke: white;
+    width: 50%;
+}
+
+.login-form label:has(input:focus,select:focus) {
+    outline: var(--focus-outline);
+}
+
+.login-form label:has(select) {
+    padding-right: 15px;
+}
+
+.login-form label > input,select {
+    background: transparent;
+    border: 0;
+    color: var(--color-dark);
+    flex-grow: 1;
+}
+
+.login-form label > input:focus,select:focus {
+    outline: 0;
+}
+
+.login-form label > svg {
+    width: 30px;
+    stroke: var(--color-dark);
+}
+
+.login-form article {
+    color: var(--grey-dark);
+    font-size: 14px;
+    text-align: center;
+    margin-top: 30px;
+    width: 90%;
+}
+
+.login-error {
+    color: var(--yellow-darkest);
+    background: var(--yellow);
+    border: 2px solid var(--yellow-darkest);
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: center;
+    border-radius: 7px;
+    margin: 0px;
+    opacity: 0;
+    pointer-events: none;
+    margin-top: -51px;
+    transition: all 100ms ease-out;
+}
+
+.login-error.visible {
+    opacity: 1;
+    margin-top: 0px;
+}
+
+/* Footer */
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--grey-UPV-dark);
+}
+
+footer > .logo {
+    display: block;
+    width: 210px;
+    margin: 20px;
+}
+
+footer a,p,h1,h2,h3,h4,h5 {
+    color: white;
+}
+
+footer i > svg {
+    stroke: var(--red-dark);
+    width: 22px
+}
+
+footer aside {
+    display: flex;
+    gap: 30px;
+}
+
+footer aside > span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--white);
+}
+
+@media (max-width: 600px) {
+    header > .header-title i.logo {
+        display: none;
+    }
+
+    header > .header-title i.logo-mobile {
+        display: block;
+        width: 100px;
+    }
+
+    header > .header-title > div.slash {
+        display: none;
+    }
+
+    main {
+        width: 100%;
+    }
+
+    section.login-form {
+        width: 100%;
+        border-radius: 0px;
+    }
+    
+    form {
+        width: 80%;
+    }
+
+    .login-form fieldset {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    header > .header-title > h1 {
+        font-size: 14px;
+    }
+
+    footer aside {
+        flex-direction: column;
+        gap: 0px;
+    }
+    footer aside > span {
+        font-size: 10px;
+        gap: 2px;
+    }
+
+    footer aside > span > i > svg {
+        width: 15px;
+    }
+
+    hr {
+        display: none;
+    }
+}
+
+
+
+
+.alert-danger {
+    color: var(--yellow-darkest);
+    background: var(--yellow);
+    border: 2px solid var(--yellow-darkest);
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: center;
+    border-radius: 7px;
+    margin: 0px;
+    opacity: 0;
+    pointer-events: none;
+    margin-top: -51px;
+    transition: all 100ms ease-out;
+    opacity: 1;
+    margin-top: 0px;
+}
+
+.alert-danger > h2 {
+    color: var(--red-darkest);
+}
+
+.alert-danger > p {
+    color: var(--yellow-darkest);
+}
